@@ -3,7 +3,10 @@ window.onload = function() {
     startGame();
   };
 
+  document.getElementById("start").onclick = startGame;
+  let theGame;
   function startGame() {
-
+    theGame = new Game();
+    mainLoop();
   }
 };

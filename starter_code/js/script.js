@@ -3,6 +3,5 @@ window.onload = function() {
   let theGame;
   function startGame() {
     theGame = new Game();
-    mainLoop();
   }
 };

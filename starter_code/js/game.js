@@ -3,22 +3,16 @@ class Game {
     this.theCar = new Car(100, 500);
     this.obstacleArray = [];
   }
-  collisionDetect(futureX, futureY) {
-    let canMove = true;
 
-    this.obstacleArray.forEach(obs => {
-      console.log(futureX, futureY, this.theCar.width, this.theCar.height, obs.x, obs.y, obs.width, obs.height);
+  spawnObstacle() {
+    let rX = Math.floor(Math.random() * 200);
+    let rY = Math.floor(Math.random() * 200);
+    let rWidth = Math.floor(Math.random() * 50) + 10;
+    let rHeight = Math.floor(Math.random() * 50) + 10;
 
-      if (
-        futureX + this.theCar.width >= obs.x &&
-        futureX <= obs.x + obs.width &&
-        futureY + this.theCar.height >= obs.y &&
-        futureY <= obs.y + obs.height
-      ) {
-        canMove = false;
-      }
-    });
-
-    return canMove;
+    let newObstacle = new Obstacle(missileTemplate, rX, rY, rWidth, rHeight);
+    this.obstacleArray.push(newObstacle);
+    // newObstacle.drawMissile();
+    newObstacle.moveDownForever();
   }
 }

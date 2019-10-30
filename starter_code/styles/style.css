@@ -37,3 +37,7 @@ body button {
   float: left;
   padding: 20px 0px;
 }
+
+#gamePage {
+  background-image: url("../images/vector-illustration-top-view-asphalt-260nw-706163338.webp");
+}

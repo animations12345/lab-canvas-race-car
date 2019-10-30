@@ -5,8 +5,8 @@ class Game {
     }
 
     spawnObstacle() {
-        let rX = Math.floor(Math.random() * 400);
-        let rY = Math.floor(Math.random() * 400);
+        let rX = Math.floor(Math.random() * 350) + 65;
+        let rY = 0;
         let rWidth = Math.floor(Math.random() * 50) + 10;
         let rHeight = Math.floor(Math.random() * 50) + 10;
 

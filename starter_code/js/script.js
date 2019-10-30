@@ -11,7 +11,7 @@ function drawSelf(obs) {
 function mainLoop() {
     frames++;
     console.log('clearRect occurred.');
-    ctx.clearRect(0, 0, 200, 500);
+    ctx.clearRect(0, 0, 500, 500);
     // ctx.drawImage(missile, 0, frames);
 
     // this is where we draw the hero

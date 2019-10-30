@@ -18,7 +18,7 @@ class Obstacle {
             this.y += 10;
 
             if (this.y > 500) {
-                clearInterval(travel);
+                clearInterval(travelDown);
             }
         }, 100);
     }

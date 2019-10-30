@@ -1,4 +1,5 @@
 window.onload = function() {
+<<<<<<< HEAD
     const ctx = document.getElementById('gamePage').getContext('2d');
     let frames = 0;
     function mainLoop() {
@@ -26,4 +27,11 @@ window.onload = function() {
         theGame = new Game();
         mainLoop();
     }
+=======
+  document.getElementById("start-button").onclick = startGame;
+  let theGame;
+  function startGame() {
+    theGame = new Game();
+  }
+>>>>>>> 3894283a7514d0913465384dbfd84d4c04e1272b
 };

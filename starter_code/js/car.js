@@ -20,7 +20,7 @@ class Car {
       ctx.drawImage(img, this.x, this.y, this.width, this.height);
     };
   };
-  moveCar = direction => {
+  moveCar = (direction, value) => {
     this[direction] -= 1;
     console.log(this);
   };
@@ -30,32 +30,25 @@ class Car {
   };
   function(animate) {
     window.requestAnimationFrame(animate);
-    ctx.clear;
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
   }
 }
 let camero = new Car(250, 400, 50, 90);
 camero.loadCar();
 
-// Car.prototype.move = moveCar;
-
-// function moveCar(futureX, futureY) {
-//   if (futureX + this.width <= 500 && futureX >= 0 && futureY + this.height <= 500 && futureY >= 0) {
-//     this.x = futureX;
-//     this.y = futureY;
-//   }
-// }
-
-// document.onkeydown = function(e) {
-//   if (e.key === "ArrowUp") {
-//     theGame.theCar.x++;
-//   }
-//   if (e.key === "ArrowDown") {
-//     theGame.theCar.move(theGame.theCar.x, theGame.theCar.y);
-//   }
-//   if (e.key === "ArrowLeft") {
-//     theGame.theCar.move(theGame.theCar.x, theGame.theCar.y);
-//   }
-//   if (e.key === "ArrowRight") {
-//     theGame.theCar.move(theGame.theCar.x, theGame.theCar.y);
-//   }
-// };
+function gameControls(e) {
+  console.log(e.key);
+  if (e.key === "ArrowUp") {
+    camero.moveCar("y", -1);
+  }
+  if (e.key === "ArrowDown") {
+    camero.moveCar("y", +1);
+  }
+  if (e.key === "ArrowLeft") {
+    camero.moveCar("x", -1);
+  }
+  if (e.key === "ArrowRight") {
+    camero.moveCar("x" + 1);
+  }
+}
+document.onkeydown = gameControls;

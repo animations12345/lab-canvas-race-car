@@ -1,4 +1,5 @@
-/* @import url("car.css"); <--- example of how to import css files into another*/
+/* v--- example of how to import css files into another */
+@import url("game.css");
 body {
   padding: 0;
   text-align: center;

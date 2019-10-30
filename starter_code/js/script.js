@@ -1,11 +1,11 @@
 const ctx = document.getElementById("gamePage").getContext("2d");
 let frames = 0;
 
-const car = new Image();
-car.src = "./images/car.png";
-car.onload = () => {
-  ctx.drawImage(car, 250, 400, 75, 75);
-};
+// const car = new Image();
+// car.src = "./images/car.png";
+// car.onload = () => {
+//   ctx.drawImage(car, 250, 400, 75, 75);
+// };
 const missileTemplate = new Image();
 missileTemplate.src = "./images/missile.png";
 function drawSelf(obs) {
@@ -22,13 +22,13 @@ function mainLoop() {
   // ctx.drawImage(missile, 0, frames);
 
   // this is where we draw the hero
-  // drawSelf(theGame.theHero, false);
+  drawSelf(theGame.theCar, false);
   // then we draw all the obstacles
   theGame.obstacleArray.forEach(eachObstacle => {
     drawSelf(eachObstacle, true);
   });
 
-  if (frames % 10 === 0) {
+  if (frames % 100 === 0) {
     theGame.spawnObstacle();
   }
 

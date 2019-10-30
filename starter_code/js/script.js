@@ -21,7 +21,7 @@ function mainLoop() {
         drawSelf(eachObstacle, true);
     });
 
-    if (frames % 10 === 0) {
+    if (frames % 100 === 0) {
         theGame.spawnObstacle();
     }
 

@@ -1,37 +1,55 @@
-const ctx = document.getElementById("gamePage").getContext("2d");
+const ctx = document.getElementById('gamePage').getContext('2d');
 let frames = 0;
 
 const missileTemplate = new Image();
-missileTemplate.src = "./images/missile.png";
+missileTemplate.src = './images/missile.png';
+
+const carTemplate = new Image();
+carTemplate.src = './images/car.png';
+
 function drawSelf(obs) {
-  if (obs) {
-    ctx.drawImage(obs.img, obs.x, obs.y);
-  } else {
-    ctx.drawImage(img, this.x, this.y, this.width, this.height);
-  }
+    ctx.drawImage(obs.img, obs.x, obs.y, obs.width, obs.height);
 }
 function mainLoop() {
-  frames++;
-  console.log("clearRect occurred.");
-  ctx.clearRect(0, 0, 500, 500);
+    frames++;
+    console.log('clearRect occurred.');
+    ctx.clearRect(0, 0, 500, 500);
 
-  // this is where we draw the hero
-  drawSelf(theGame.theCar, false);
-  // then we draw all the obstacles
-  theGame.obstacleArray.forEach(eachObstacle => {
-    drawSelf(eachObstacle, true);
-  });
+    // this is where we draw the car
+    drawSelf(theGame.theCar, false);
 
-  if (frames % 100 === 0) {
-    theGame.spawnObstacle();
-  }
+    // then we draw all the obstacles
+    theGame.obstacleArray.forEach(eachObstacle => {
+        drawSelf(eachObstacle, true);
+    });
 
-  requestAnimationFrame(mainLoop);
+    if (frames % 100 === 0) {
+        theGame.spawnObstacle();
+    }
+
+    requestAnimationFrame(mainLoop);
 }
 
-document.getElementById("start-button").onclick = startGame;
+document.getElementById('start-button').onclick = startGame;
 let theGame;
 function startGame() {
-  theGame = new Game();
-  mainLoop();
+    theGame = new Game();
+    mainLoop();
 }
+
+function gameControls(e) {
+    console.log(e.key);
+    if (e.key === 'ArrowUp') {
+        theGame.theCar.moveCar('y', -1);
+    }
+    if (e.key === 'ArrowDown') {
+        theGame.theCar.moveCar('y', +1);
+    }
+    if (e.key === 'ArrowLeft') {
+        theGame.theCar.moveCar('x', -1);
+    }
+    if (e.key === 'ArrowRight') {
+        theGame.theCar.moveCar('x' + 1);
+    }
+}
+document.onkeydown = gameControls;

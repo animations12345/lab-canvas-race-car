@@ -6,17 +6,10 @@ class Obstacle {
         this.width = width;
         this.height = height;
     }
-    // drawMissile() {
-    //     this.img.onload = () => {
-    //         ctx.drawImage(this.img, this.x, this.y);
-    //     };
-    // }
+
     moveDownForever() {
         let travelDown = setInterval(() => {
-            //    each setInterval function gets a unique ID
-            // were using blah here to save this ID
             this.y += 10;
-
             if (this.y > 500) {
                 clearInterval(travelDown);
             }

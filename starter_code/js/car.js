@@ -17,7 +17,16 @@ class Car {
     //         ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
     //     };
     // };
-    moveCar = (direction, value) => {
+    moveCar = (direction, value, futureX, futureY) => {
+        if (
+            futureX + this.width <= 400 &&
+            futureX >= 0 &&
+            futureY + this.height <= 400 &&
+            futureY >= 0
+        ) {
+            this.x = futureX;
+            this.y = futureY;
+        }
         this[direction] += value;
         console.log(this);
     };

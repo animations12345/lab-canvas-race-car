@@ -38,18 +38,17 @@ function startGame() {
 }
 
 function gameControls(e) {
-    console.log(e.key);
     if (e.key === 'ArrowUp') {
-        theGame.theCar.moveCar('y', -1);
+        theGame.theCar.moveCar('y', -8);
     }
     if (e.key === 'ArrowDown') {
-        theGame.theCar.moveCar('y', +1);
+        theGame.theCar.moveCar('y', +8);
     }
     if (e.key === 'ArrowLeft') {
-        theGame.theCar.moveCar('x', -1);
+        theGame.theCar.moveCar('x', -8);
     }
     if (e.key === 'ArrowRight') {
-        theGame.theCar.moveCar('x' + 1);
+        theGame.theCar.moveCar('x', +8);
     }
 }
 document.onkeydown = gameControls;

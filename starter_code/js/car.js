@@ -18,7 +18,7 @@ class Car {
     //     };
     // };
     moveCar = (direction, value) => {
-        this[direction] -= 1;
+        this[direction] += value;
         console.log(this);
     };
 
